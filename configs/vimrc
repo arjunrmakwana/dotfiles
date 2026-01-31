@@ -1,0 +1,59 @@
+" Basic vim configuration that works across different systems
+
+" Enable syntax highlighting
+syntax on
+
+" Show line numbers
+set number
+
+" Enable mouse support
+set mouse=a
+
+" Set tab width
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" Enable incremental search
+set incsearch
+
+" Highlight search results
+set hlsearch
+
+" Enable case-insensitive search
+set ignorecase
+set smartcase
+
+" Show matching brackets
+set showmatch
+
+" Enable auto-indentation
+set autoindent
+set smartindent
+
+" Set background color scheme
+set background=dark
+
+" Enable backspace over everything
+set backspace=indent,eol,start
+
+" Show status line
+set laststatus=2
+
+" Enable file type detection
+filetype on
+filetype plugin on
+filetype indent on
+
+" Set encoding
+set encoding=utf-8
+
+" Enable clipboard integration (if available)
+if has('clipboard')
+    set clipboard=unnamedplus
+endif
+
+" Load local vimrc if it exists
+if filereadable(expand("~/.vimrc.local"))
+    source ~/.vimrc.local
+endif

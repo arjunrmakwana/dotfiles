@@ -1,0 +1,49 @@
+# SSH Client Configuration Template
+# Copy this to ~/.ssh/config and customize per machine
+# This template excludes machine-specific and sensitive information
+
+# Global SSH settings
+Host *
+    ServerAliveInterval 60
+    ServerAliveCountMax 3
+    Compression yes
+    ControlMaster auto
+    ControlPath ~/.ssh/sockets/%r@%h-%p
+    ControlPersist 600
+
+# Example configurations - customize as needed:
+
+# Generic development server template
+# Host dev
+#     HostName your-dev-server.example.com
+#     User your-username
+#     Port 22
+#     IdentityFile ~/.ssh/id_rsa
+
+# Jump host configuration template
+# Host jumphost
+#     HostName jump.example.com
+#     User your-username
+#     Port 22
+
+# Server behind jump host template
+# Host internal-server
+#     HostName internal.example.com
+#     User your-username
+#     Port 22
+#     ProxyJump jumphost
+
+# GitHub configuration
+# Host github.com
+#     HostName github.com
+#     User git
+#     IdentityFile ~/.ssh/id_rsa_github
+
+# Local network shortcuts
+# Host pi
+#     HostName 192.168.1.100
+#     User pi
+#     Port 22
+
+# Note: This is a template file. Copy to ~/.ssh/config and customize
+# Never commit actual SSH configurations with real hostnames/usernames to version control
